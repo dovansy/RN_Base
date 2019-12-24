@@ -1,0 +1,20 @@
+{
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "alias": {
+            "~": "./app",
+            "@i18": "./app/i18n/i18n.js",
+            "@constant": "./app/constants/Constant.js",
+            "@screen": "./app/screens",
+            "@action": "./app/redux/actions/index.js",
+            "@component": "./app/components",
+            "@image": "./app/assets/images/",
+            "@theme": "./app/constants/Theme.js",
+            "@R": "./app/assets/R.js"
+          }
+        }
+      ]
+    ]
+  }
