@@ -20,17 +20,21 @@ export default class UserScreen extends Component {
                 </View>
                 {/* Block Content User 1 */}
                 <View style={styles.content_block_1} >
-                    {this._getFuncBlock("Đơn Hàng", R.images.ic_hoadon)}
-                    {this._getFuncBlock("Cửa Hàng", R.images.ic_cuahang)}
-                    {this._getFuncBlock("Lịch Sử Giao Dịch", R.images.ic_lichsu)}
-                    {this._getFuncBlock("Trở Thành Đại Lý", R.images.ic_daily)}
-                    {this._getFuncBlock("Thông Tin Bảo Hành", R.images.ic_baohanh)}
-                    {this._getFuncBlock("Thông Tin DaiiChi", R.images.ic_infoApp)}
-                    {this._getFuncBlock("Đăng Xuất", R.images.ic_dangxuat, true)}
+                    {this._getFuncBlock("Đơn hàng", R.images.ic_hoadon)}
+                    {this._getFuncBlock("Cửa hàng", R.images.ic_cuahang)}
+                    {this._getFuncBlock("Lịch sử giao dịch", R.images.ic_lichsu)}
+                    {this._getFuncBlock("Trở thành đại lý", R.images.ic_daily)}
+                    {this._getFuncBlock("Thông tin bảo hành", R.images.ic_baohanh)}
+                    {this._getFuncBlock("Thông tin DaiiChi", R.images.ic_infoApp)}
+                    {this._getFuncBlock("Đăng xuất", R.images.ic_dangxuat, true)}
                 </View>
                 {/* Block Content User 2 */}
-                <View>
-
+                <View style={styles.content_block_2}>
+                    <View style={styles.block_score}>
+                        <Text style={styles.txt_score}>Điểm tích lũy: </Text>
+                        <Text style={styles.num_score}>1200</Text>
+                    </View>
+                    <Image style={styles.img_rank} source={R.images.ic_group}/>
                 </View>
             </View>
         )
@@ -44,7 +48,7 @@ export default class UserScreen extends Component {
                 <View style={styles.content_block_func}>
                     <Image style={styles.img_func} source={imagePath} />
                     <Text style={styles.txt_func}> {title}</Text>
-                    <Image style={styles.path} source={require('../assets/images/ic_path.png')} />
+                    <Image style={styles.path} source={R.images.ic_path} />
                 </View>
                 {!isLast && <View style={styles.line}></View>}
             </View>
@@ -104,7 +108,7 @@ const styles = StyleSheet.create({
         color: '#707070',
         fontFamily: 'Roboto-Regular'
     },
-    //content
+    //block content view 1
     content_block_1: {
         flexDirection: 'column',
         marginBottom: 9,
@@ -138,5 +142,35 @@ const styles = StyleSheet.create({
         marginLeft: 30,
         marginRight: 27,
         backgroundColor: '#8B8B8B'
+    },
+    //block content view 2
+    content_block_2: {
+        flex: 1,
+        backgroundColor: 'white',
+        flexDirection: 'column'
+    },
+    block_score: {
+        marginTop: 6,
+        justifyContent: 'center',
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    txt_score: {
+        fontSize: 14,
+        fontFamily: 'Roboto',
+        color: '#EA4335'
+    },
+    num_score: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        fontFamily: 'Roboto',
+        color: '#EA4335'
+    },
+    img_rank:{
+        marginTop: 18,
+        marginRight: 52,
+        marginLeft: 43,
+        width: 298,
+        height: 20,
     }
 });
