@@ -44,7 +44,7 @@ export default class UserScreen extends Component {
                 <View style={styles.content_block_func}>
                     <Image style={styles.img_func} source={imagePath} />
                     <Text style={styles.txt_func}> {title}</Text>
-                    <Image style={styles.prew} source={require('../assets/images/ic_prew.png')} />
+                    <Image style={styles.prew} source={R.images.ic_prew} />
                 </View>
                 {!isLast && <View style={styles.line}></View>}
             </View>
