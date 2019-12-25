@@ -44,7 +44,7 @@ export default class UserScreen extends Component {
                 <View style={styles.content_block_func}>
                     <Image style={styles.img_func} source={imagePath} />
                     <Text style={styles.txt_func}> {title}</Text>
-                    <Image style={styles.prew} source={R.images.ic_prew} />
+                    <Image style={styles.path} source={R.images.ic_path} />
                 </View>
                 {!isLast && <View style={styles.line}></View>}
             </View>
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto-Regular',
         flex: 1
     },
-    prew: {
+    path: {
         width: 10,
         height: 18
     },
