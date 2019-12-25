@@ -26,7 +26,7 @@ export default class UserScreen extends Component {
                     {this._getFuncBlock("Trở Thành Đại Lý", R.images.ic_daily)}
                     {this._getFuncBlock("Thông Tin Bảo Hành", R.images.ic_baohanh)}
                     {this._getFuncBlock("Thông Tin DaiiChi", R.images.ic_infoApp)}
-                    {this._getFuncBlock("Đăng Xuất", R.images.ic_dangxuat)}
+                    {this._getFuncBlock("Đăng Xuất", R.images.ic_dangxuat, true)}
                 </View>
                 {/* Block Content User 2 */}
                 <View>
@@ -44,7 +44,7 @@ export default class UserScreen extends Component {
                 <View style={styles.content_block_func}>
                     <Image style={styles.img_func} source={imagePath} />
                     <Text style={styles.txt_func}> {title}</Text>
-                    <Image style={styles.path} source={R.images.ic_path} />
+                    <Image style={styles.path} source={require('../assets/images/ic_path.png')} />
                 </View>
                 {!isLast && <View style={styles.line}></View>}
             </View>
