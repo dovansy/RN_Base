@@ -15,6 +15,7 @@ import * as theme from "@theme";
 import {
     Image
 } from "react-native";
+import UpdateUserInfo from '~/screens/user/UpdateUserInfo';
 const TabBarComponent = props => <BottomTabBar {...props} />;
 
 const Auth = createStackNavigator({
@@ -51,13 +52,24 @@ const Main = createBottomTabNavigator(
                 tabBarLabel: R.strings.home,
             },
         },
-        [SCREEN_ROUTER.USER]: {
-            screen: UserScreen,
-            title: R.strings.user,
-            navigationOptions: {
-                tabBarLabel: R.strings.user,
+        [SCREEN_ROUTER.USER]: createStackNavigator({
+            user: {
+                screen: UserScreen,
+                title: R.strings.user,
+                navigationOptions: {
+                    tabBarLabel: R.strings.user,
+                },
             },
+            updateUserInfo: {
+                screen: UpdateUserInfo,
+            }
         },
+            {
+                defaultNavigationOptions: {
+                    header: null,
+                },
+            }
+        ),
     },
     {
         defaultNavigationOptions: ({ navigation }) => ({
