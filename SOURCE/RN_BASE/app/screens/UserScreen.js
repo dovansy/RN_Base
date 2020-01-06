@@ -1,54 +1,108 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import {
+    Text,
+    View,
+    SafeAreaView,
+    Image,
+    StyleSheet,
+    TouchableOpacity,
+    ActivityIndicator
+} from 'react-native'
 import R from '@R'
 import DaiiChiHeader from '@component/DaiiChiHeader'
-import NavigationUtil from '~/navigation/NavigationUtil'
+import NavigationUtil from '~/navigation/NavigationUtil';
+import axios from 'axios'
 
 export default class UserScreen extends Component {
+
+    state = {
+        isLoading: true,
+        err: null,
+        data: {},
+    }
+
+    componentDidMount() {
+        this._getData()
+    }
+
+    _getData() {
+        console.log("Bắt đầu lấy dữ liệu từ api")
+        axios.get("http://winds.hopto.org:8521/api/Service/GetUserInfor", {
+            headers: {
+                token: '65FD62931DE65C0F2F0EC18B28F78456'
+            }
+        }).then(res => {
+            console.log(res.data)
+            this.setState({
+                isLoading: false,
+                data: res.data.data
+            })
+        }).catch(err => {
+            console.log(err)
+            this.setState({
+                isLoading: false,
+                err: err
+            })
+        })
+    }
+
     render() {
         return (
             <View style={styles.container}>
-                <DaiiChiHeader title='Tài Khoản' />
-                <View style={styles.container}>
-                    {/* Block User info */}
-                    <View style={styles.user_info}>
-                        <Image style={styles.profile_ficture}
-                            source={R.images.ic_canhan} />
-                        <View style={styles.block_thongtin}>
-                            <View style={styles.text_block_name}>
-                                <Text style={styles.text_hoten}>Nguyễn Thị Thu Phương </Text>
-                                <Text style={styles.text_daily}> Đại lý</Text>
-                            </View>
-                            <TouchableOpacity
-                                onPress={() => {
-                                    NavigationUtil.navigate('updateUserInfo')
-                                }}
-                            >
-                                <Text style={styles.text_chinhsua}> Chỉnh sửa thông tin</Text>
-                            </TouchableOpacity>
+                <DaiiChiHeader
+                    title="Thông tin tài khoản"
+                />
+                {this._renderBody()}
+            </View>
+        )
+    }
+    _renderBody() {
+        if (this.state.isLoading)
+            return (<ActivityIndicator />
+            )
+        if (this.state.err)
+            return (<Text>Đã có lỗi xảy ra</Text>)
+        return (
+            <SafeAreaView style={styles.container}>
+                {/* Block User info */}
+                <View style={styles.user_info}>
+                    <Image style={styles.profile_ficture}
+                        source={R.images.ic_canhan}
+                    />
+                    <View style={styles.block_thongtin}>
+                        <View style={styles.text_block_name}>
+                            <Text style={styles.text_hoten}>{this.state.data.customerName}</Text>
+                            <Text style={styles.text_daily}> Đại lý</Text>
+                        </View>
+                        <TouchableOpacity
+                            onPress={() => {
+                                NavigationUtil.navigate('updateUserInfo')
+                            }}
+                        >
+                            <Text style={styles.text_chinhsua}> Chỉnh sửa thông tin</Text>
+                        </TouchableOpacity>
 
-                        </View>
-                    </View>
-                    {/* Block Content User 1 */}
-                    <View style={styles.content_block_1} >
-                        {this._getFuncBlock("Đơn hàng", R.images.ic_hoadon)}
-                        {this._getFuncBlock("Cửa hàng", R.images.ic_cuahang)}
-                        {this._getFuncBlock("Lịch sử giao dịch", R.images.ic_lichsu)}
-                        {this._getFuncBlock("Trở thành đại lý", R.images.ic_daily)}
-                        {this._getFuncBlock("Thông tin bảo hành", R.images.ic_baohanh)}
-                        {this._getFuncBlock("Thông tin DaiiChi", R.images.ic_infoApp)}
-                        {this._getFuncBlock("Đăng xuất", R.images.ic_dangxuat, true)}
-                    </View>
-                    {/* Block Content User 2 */}
-                    <View style={styles.content_block_2}>
-                        <View style={styles.block_score}>
-                            <Text style={styles.txt_score}>Điểm tích lũy: </Text>
-                            <Text style={styles.num_score}>1200</Text>
-                        </View>
-                        <Image style={styles.img_rank} source={R.images.ic_group} />
                     </View>
                 </View>
-            </View>
+                {/* Block Content User 1 */}
+                <View style={styles.content_block_1} >
+                    {this._getFuncBlock("Đơn hàng", R.images.ic_hoadon)}
+                    {this._getFuncBlock("Cửa hàng", R.images.ic_cuahang)}
+                    {this._getFuncBlock("Lịch sử giao dịch", R.images.ic_lichsu)}
+                    {this._getFuncBlock("Trở thành đại lý", R.images.ic_daily)}
+                    {this._getFuncBlock("Thông tin bảo hành", R.images.ic_baohanh)}
+                    {this._getFuncBlock("Thông tin DaiiChi", R.images.ic_infoApp)}
+                    {this._getFuncBlock("Đăng xuất", R.images.ic_dangxuat, true)}
+                </View>
+                {/* Block Content User 2 */}
+                <View style={styles.content_block_2}>
+                    <View style={styles.block_score}>
+                        <Text style={styles.txt_score}>Điểm tích lũy: </Text>
+                        <Text style={styles.num_score}>{this.state.data.point}</Text>
+                    </View>
+                    <Image style={styles.img_rank} source={R.images.ic_group} />
+                </View>
+            </SafeAreaView>
         )
     }
 

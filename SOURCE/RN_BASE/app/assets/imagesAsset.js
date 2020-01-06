@@ -2,20 +2,30 @@ const images = {
     
     ic_back: require("./images/ic_back.png"),
     ic_baohanh: require("./images/ic_baohanh.png"),
+    ic_cal_point: require("./images/ic_cal_point.png"),
     ic_canhan: require("./images/ic_canhan.png"),
+    ic_coin: require("./images/ic_coin.png"),
     ic_cuahang: require("./images/ic_cuahang.png"),
     ic_daily: require("./images/ic_daily.png"),
     ic_dangxuat: require("./images/ic_dangxuat.png"),
+    ic_datepicker: require("./images/ic_datepicker.png"),
     ic_dungdiem: require("./images/ic_dungdiem.png"),
     ic_group: require("./images/ic_group.png"),
     ic_hoadon: require("./images/ic_hoadon.png"),
     ic_home: require("./images/ic_home.png"),
     ic_infoApp: require("./images/ic_infoApp.png"),
     ic_lichsu: require("./images/ic_lichsu.png"),
+    ic_order: require("./images/ic_order.png"),
     ic_path: require("./images/ic_path.png"),
+    ic_price: require("./images/ic_price.png"),
+    ic_q_and_a: require("./images/ic_q_and_a.png"),
     ic_rank: require("./images/ic_rank.png"),
     ic_sanpham: require("./images/ic_sanpham.png"),
+    ic_star: require("./images/ic_star.png"),
     ic_thongbao: require("./images/ic_thongbao.png"),
-    ic_user: require("./images/ic_user.png")
+    ic_user: require("./images/ic_user.png"),
+    ic_use_point: require("./images/ic_use_point.png"),
+    ic_utilities: require("./images/ic_utilities.png"),
+    ic_warranty: require("./images/ic_warranty.png")
     }
 export default images

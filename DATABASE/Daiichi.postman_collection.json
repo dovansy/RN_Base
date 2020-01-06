@@ -1,0 +1,951 @@
+{
+	"info": {
+		"_postman_id": "f15a0ec2-ff4e-4c03-b9cb-03ef232c0d07",
+		"name": "Daiichi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"phone\":\"0977999716\",\n\t\"password\":\"0977999716\",\n\t\"customerName\":\"Park Hang Seo\",\n\t\"email\":\"HLV_park@winds.vn\",\n\t\"address\":\"Đường Thanh Niên\",\n\t\"provinceID\":1,\n\t\"districtID\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}register",
+					"host": [
+						"{{server}}register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"value\":\"ya29.ImC0B_kFaIy0nvQmuQCNUzFR5fsN87SoGFSgYt3aN3qBGZl3WFttyvpbFkXIPOcJ36Zw6S3o9rRI4IP8zPdlFf20ZbtzlxjsZK33KBX0CNrr_f2ytsD6ciR08v3GJB7Pkps\",\n\t\"password\":\"0977999716\",\n\t\"type\":\"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}LoginApp",
+					"host": [
+						"{{server}}LoginApp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"phone\": \"0968839496\",\n    \"customerName\": \"Nguyen Khac Vinh\",\n    \"dobStr\": \"24/05/1998\",\n    \"sex\": 0,\n    \"email\": \"vinhnk@winds.vn\",\n    \"provinceID\": 1,\n    \"districtID\": 274,\n    \"address\": \"Thống Nhất, Dương Liễu\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}UpdateUser",
+					"host": [
+						"{{server}}UpdateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserInfo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}GetUserInfor",
+					"host": [
+						"{{server}}GetUserInfor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}Logout",
+					"host": [
+						"{{server}}Logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProvince&District",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}GetProvinceAndDistric?ProID=",
+					"host": [
+						"{{server}}GetProvinceAndDistric"
+					],
+					"query": [
+						{
+							"key": "ProID",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getHomeScreen",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}GetHomeScreen?deviceID=ahi",
+					"host": [
+						"{{server}}GetHomeScreen"
+					],
+					"query": [
+						{
+							"key": "deviceID",
+							"value": "ahi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNews",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}GetNews?type=1",
+					"host": [
+						"{{server}}GetNews"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getListCategory",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}getListCategory",
+					"host": [
+						"{{server}}getListCategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getListProduct",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}getListProduct?page=1&limit=10&parentID=1",
+					"host": [
+						"{{server}}getListProduct"
+					],
+					"query": [
+						{
+							"key": "childID",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "parentID",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProductDetail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}getProductDetail?productID=1",
+					"host": [
+						"{{server}}getProductDetail"
+					],
+					"query": [
+						{
+							"key": "productID",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getListShop",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}getListShop?provinceID=&latitude=20.08090&longitude=106.098098",
+					"host": [
+						"{{server}}getListShop"
+					],
+					"query": [
+						{
+							"key": "provinceID",
+							"value": ""
+						},
+						{
+							"key": "latitude",
+							"value": "20.08090"
+						},
+						{
+							"key": "longitude",
+							"value": "106.098098"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNotify",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}GetNotify",
+					"host": [
+						"{{server}}GetNotify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCountCart",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}GetCountCart",
+					"host": [
+						"{{server}}GetCountCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCarts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}getCarts",
+					"host": [
+						"{{server}}getCarts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addToCart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ItemID\" : 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}AddToCart",
+					"host": [
+						"{{server}}AddToCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"listCartUpdate\": [\r\n        {\r\n                \"orderItemID\": 2,\r\n                \"itemID\": 2,\r\n                \"itemName\": \"Bếp điện từ Daiichi DC-ID203\",\r\n                \"itemPrice\": 800000,\r\n                \"sumPrice\": 3200000,\r\n                \"qty\": 4,\r\n                \"image\": \"http://daiichi.vn/images/stores/2016/07/15/bep-dien-tu-daiichi-dc-id203.png\",\r\n                \"description\": \" Bếp của hãng Daiichi sản xuất đạt tiêu chuẩn quốc tế, phù hợp để thực hiện chế biến tất cả những món ăn thay thế hoàn toàn những chiếc bếp gas hay bếp than gây hại.\",\r\n                \"updateAt\": \"2019-12-06T13:18:30.48\"\r\n            }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}UpdateCart",
+					"host": [
+						"{{server}}UpdateCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeCart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"listOrderItemID\":[1,2]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}RemoveCart",
+					"host": [
+						"{{local}}RemoveCart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateOrder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"listOrderItem\": [\n        \n    ],\n\t\"ProvinceID\": 1,\n\t\"DistrictID\": 274,\n\t\"BuyerName\":\"Nguyen Khac Vinh\",\n\t\"BuyerPhone\":\"0968839496\",\n\t\"Address\":\"Thống Nhất, Dương Liễu\",\n\t\"Note\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}CreateOrder",
+					"host": [
+						"{{server}}CreateOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetListOrder",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}GetListOrder?status=1&page=1&limit=50",
+					"host": [
+						"{{server}}GetListOrder"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "1"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrderDetail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}GetOrderDetail?orderID=148",
+					"host": [
+						"{{server}}GetOrderDetail"
+					],
+					"query": [
+						{
+							"key": "orderID",
+							"value": "148"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CancelOrder",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}CancelOrder?orderID=12",
+					"host": [
+						"{{server}}CancelOrder"
+					],
+					"query": [
+						{
+							"key": "orderID",
+							"value": "12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetListGifts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}GetListGifts?Type=3&GiftID=",
+					"host": [
+						"{{server}}GetListGifts"
+					],
+					"query": [
+						{
+							"key": "Type",
+							"value": "3"
+						},
+						{
+							"key": "GiftID",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateRequest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"GiftID\" : 28,\n\t\"Type\" : 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}CreateRequest",
+					"host": [
+						"{{server}}CreateRequest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GivePoint",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Phone\": \"0169011214\",\n    \"Point\": 10,\n    \"Comment\": \"Tặng điểm cho bạn nè\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}GivePoint",
+					"host": [
+						"{{server}}GivePoint"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "changePassword",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"password\": \"12345\",\n    \"newPassword\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}changePassword",
+					"host": [
+						"{{server}}changePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetNewsRelative",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}GetListNewsRelative?type=1&newsID=1",
+					"host": [
+						"{{server}}GetListNewsRelative"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "1"
+						},
+						{
+							"key": "newsID",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActiveAgent",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"AgentCode\": \"DC000098\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}ActiveAgent",
+					"host": [
+						"{{server}}ActiveAgent"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetPointHistory",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}GetPointHistory?FromDate=12/07/2019",
+					"host": [
+						"{{server}}GetPointHistory"
+					],
+					"query": [
+						{
+							"key": "FromDate",
+							"value": "12/07/2019"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getItemByCode",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}getItemByCode?code=005410074A26CDC1",
+					"host": [
+						"{{server}}getItemByCode"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "005410074A26CDC1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "activeWarranty",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"70E98919A5C30571\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{server}}activeWarranty",
+					"host": [
+						"{{server}}activeWarranty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getListWarranty",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{server}}getListWarranty",
+					"host": [
+						"{{server}}getListWarranty"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b1580c97-ee9e-441a-8c96-a8cadbdd1bc7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "261b643d-6bb8-4de4-9c2d-5c83e9cb64c0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

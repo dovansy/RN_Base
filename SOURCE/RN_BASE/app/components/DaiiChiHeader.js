@@ -8,6 +8,8 @@ class DaiiChiHeader extends Component {
     render() {
         return (
             <Header
+            // status bar
+                statusBarProps={{ barStyle: 'light-content', translucent: true, backgroundColor: 'transparent' }}
                 placement='left'
                 containerStyle={styles.Header}
                 leftComponent={this.props.back &&
