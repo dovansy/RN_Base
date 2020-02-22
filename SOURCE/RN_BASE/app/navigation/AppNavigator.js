@@ -19,6 +19,7 @@ import {
 import UpdateUserInfo from '~/screens/user/UpdateUserInfo';
 import PointScreen from '~/screens/PointScreen';
 import NotificationScreen from '~/screens/NotificationScreen';
+import ListProduct from '~/screens/product/ListProduct';
 const TabBarComponent = props => <BottomTabBar {...props} />;
 
 const Auth = createStackNavigator({
@@ -49,7 +50,17 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
     );
 };
 
-
+const ProductStack = createStackNavigator(
+    {
+        product: ProductScreen,
+        listProduct: ListProduct
+    },
+    {
+        defaultNavigationOptions: {
+            header: null,
+        }
+    }
+)
 
 
 const bottomBar = createBottomTabNavigator(
@@ -62,20 +73,20 @@ const bottomBar = createBottomTabNavigator(
             },
         },
         [SCREEN_ROUTER.PRODUCT]: {
-            screen: ProductScreen,
+            screen: ProductStack,
             title: R.strings.product,
             navigationOptions: {
                 tabBarLabel: R.strings.product,
             },
         },
-        [SCREEN_ROUTER.POINT] : {
+        [SCREEN_ROUTER.POINT]: {
             screen: PointScreen,
             title: R.strings.point,
             navigationOptions: {
                 tabBarLabel: R.strings.point,
             },
         },
-        [SCREEN_ROUTER.NOTIFICATION] :{
+        [SCREEN_ROUTER.NOTIFICATION]: {
             screen: NotificationScreen,
             title: R.strings.notification,
             navigationOptions: {
@@ -86,7 +97,7 @@ const bottomBar = createBottomTabNavigator(
             screen: UserScreen,
             title: R.strings.user,
             navigationOptions: {
-            tabBarLabel: R.strings.user,
+                tabBarLabel: R.strings.user,
 
             }
         }
@@ -122,7 +133,8 @@ const bottomBar = createBottomTabNavigator(
 
 const Main = createStackNavigator({
     bottomBar: bottomBar,
-    [SCREEN_ROUTER.UPDATE_USER_INFO] : UpdateUserInfo
+    [SCREEN_ROUTER.UPDATE_USER_INFO]: UpdateUserInfo,
+    [SCREEN_ROUTER.LIST_PRODUCT]: ListProduct
 
 }, {
     defaultNavigationOptions: {

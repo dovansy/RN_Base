@@ -13,6 +13,7 @@ import DaiiChiHeader from '@component/DaiiChiHeader'
 import NavigationUtil from '~/navigation/NavigationUtil';
 import { requestUserInfo} from '../constants/Api'
 import reactotron from 'reactotron-react-native'
+import { SCREEN_ROUTER } from '~/constants/Constant';
 
 export default class UserScreen extends Component {
 
@@ -76,7 +77,7 @@ export default class UserScreen extends Component {
                         </View>
                         <TouchableOpacity
                             onPress={() => {
-                                NavigationUtil.navigate('updateUserInfo')
+                                NavigationUtil.navigate(SCREEN_ROUTER.UPDATE_USER_INFO)
                             }}
                         >
                             <Text style={styles.text_chinhsua}> Chỉnh sửa thông tin</Text>

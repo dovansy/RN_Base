@@ -12,6 +12,8 @@ import R from '@R'
 import reactotron from 'reactotron-react-native'
 import { requestProduct } from '~/constants/Api'
 import DaiiChiHeader from '~/components/DaiiChiHeader'
+import NavigationUtil from '~/navigation/NavigationUtil'
+import { SCREEN_ROUTER } from '~/constants/Constant'
 
 export default class ProductScreen extends Component {
     constructor(props) {
@@ -48,7 +50,7 @@ export default class ProductScreen extends Component {
         return (
             <View>
                 <DaiiChiHeader
-                    title= "Sản phẩm"
+                    title="Sản phẩm"
                 />
                 {this._renderBody()}
             </View>
@@ -85,7 +87,10 @@ export default class ProductScreen extends Component {
                 }} style={styles.image_category} />
                 <View style={{ flexDirection: 'row' }} >
                     <View style={{ flexDirection: 'column' }}>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => {
+                                NavigationUtil.navigate(SCREEN_ROUTER.LIST_PRODUCT)
+                            }}>
                             <View style={styles.block_name_category}>
                                 <Text style={styles.txt_name_category}>{item.name}</Text>
                             </View>
