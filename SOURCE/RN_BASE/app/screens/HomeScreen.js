@@ -1,114 +1,116 @@
 import React, { Component } from 'react';
-import { View, Text, ActivityIndicator, StyleSheet, SafeAreaView, ScrollView, Image } from 'react-native';
+import {
+    View, Text,
+    StyleSheet,
+    ActivityIndicator,
+    ScrollView,
+    Image,
+    TouchableOpacity
+} from 'react-native';
+import DaiiChiHeader from '../components/DaiiChiHeader';
 import R from '@R'
-import DaiiChiHeader from '~/components/DaiiChiHeader';
-import axios from 'axios'
-// import { styles } from '~/constants/Theme';
+import { requestHomeData } from '../constants/Api';
+import reactotron from 'reactotron-react-native';
+
 
 export default class HomeScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isLoading: true,
-            err: false,
-            data: {}
-        };
+            err: null,
+            data: {},
+        }
     }
 
     componentDidMount() {
+        // lay du lieu
         this._getData()
     }
 
-    _getData() {
-        console.log("Bat dau lay du lieu tu api")
-        axios.get("http://winds.hopto.org:8521/api/Service/GetHomeScreen?deviceID=ahi", {
-            headers: {
-                token: "65FD62931DE65C0F2F0EC18B28F78456"
-            }
-        }).then(res => {
-            console.log(res.data)
+    _getData = async () => {
+        try {
+            response = await requestHomeData("deviceid")
+            reactotron.log(response)
             this.setState({
                 isLoading: false,
-                dataCustomer: res.data.data.customerInfo,
-                dataProduct: res.data.data.listProduct
+                data: response.data
             })
-        }).catch(err => {
-            console.log(err)
+        } catch (error) {
             this.setState({
                 isLoading: false,
-                err: err
+                err: error
             })
-        })
+        }
     }
 
     render() {
         return (
             <View>
-                <DaiiChiHeader title='Xin chao,' />
-                {/* <Text>{this.state.data.customerName}</Text> */}
+                <DaiiChiHeader
+                    title="Xin chào,"
+                />
                 {this._renderBody()}
             </View>
-        );
+        )
     }
+
     _renderBody() {
         if (this.state.isLoading)
             return (<ActivityIndicator />)
         if (this.state.err)
-            return (<Text>Đã có lỗi xảy ra</Text>)
-        return (
-            <SafeAreaView >
-                <ScrollView >
-                    {/* block content function home screen */}
-                    <View style={styles.block_point}>
-                        <View style={styles.content_block_point}>
-                            <View style={styles.content_block_point_1}>
-                                <View style={styles.txt_score}>
-                                    <Text style={styles.txt_point}>Điểm tích lũy</Text>
-                                </View>
-                                <View style={styles.number_point}>
-                                    <Image style={styles.img_point} source={R.images.ic_coin} />
-                                    <Text style={styles.txt_number_point}>{this.state.dataCustomer.point}</Text>
-                                    <Image style={styles.img_point} source={R.images.ic_path} />
-                                </View>
+            return (<Text>Đã có lỗi xảy ra, vui lòng thử lại</Text>)
+        return (<View>
+            <ScrollView>
+                {this._funcBlock()}
+                {this._productBlock()}
+                {this._newsBlock()}
+            </ScrollView>
+        </View>)
+    }
 
-                            </View>
-                            <View style={styles.line}></View>
-                            {/* block 1 function point */}
-                            <View style={styles.block_func_point_row}>
-                                {this._getFuncPoint("Tích điểm", R.images.ic_cal_point)}
-                                {this._getFuncPoint("Sử dụng điểm", R.images.ic_use_point)}
-                                {this._getFuncPoint("Tiện ích", R.images.ic_utilities)}
-                            </View>
-                            {/* block 2 function point */}
-                            <View style={styles.block_func_point_row}>
-                                {this._getFuncPoint("Hỏi - đáp", R.images.ic_q_and_a)}
-                                {this._getFuncPoint("Đặt hàng", R.images.ic_order)}
-                                {this._getFuncPoint("Bảo hành", R.images.ic_warranty)}
-                            </View>
+    _funcBlock() {
+        return (
+            <View style={styles.block_point}>
+                <View style={styles.content_block_point}>
+                    <View style={styles.content_block_point_1}>
+                        <View style={styles.txt_score}>
+                            <Text style={styles.txt_point}>Điểm tích lũy</Text>
+                        </View>
+                        <View style={styles.number_point}>
+                            <Image style={styles.img_point} source={R.images.ic_coin} />
+                            <Text style={styles.txt_number_point}>{this.state.data.customerInfo.point}</Text>
+                            <Image style={styles.img_point} source={R.images.ic_path} />
                         </View>
                     </View>
-                    {/* block content product */}
-                    <View style={{ marginTop: 7, backgroundColor: '#FFFFFF', height: 269 }}>
-                        <Text style={styles.block_product}>SẢN PHẨM</Text>
-                        <ScrollView horizontal={true}>
-                            <View style={styles.list_product}>
-                                <Image style={{ width: 100, height: 100 }} source={{ uri:this.state.dataProduct.image }}></Image>
-                                <Text style={styles.txt_name_product}>{this.state.dataProduct.name}</Text>
-                                <View style={{ flexDirection: 'row' }}>
-                                    <Image style={{ width: 13.5, height: 13.5 }} source={R.images.ic_price} />
-                                    <Text style={styles.txt_price_product}>{this.state.dataProduct.price} đ</Text>
-                                </View>
-                            </View>
-                            <View style={styles.list_product}>
-
-                            </View>
-                            <View style={styles.list_product}>
-
-                            </View>
-                        </ScrollView>
+                    <View style={styles.line}></View>
+                    {/* block 1 function point */}
+                    <View style={styles.block_func_point_row}>
+                        <TouchableOpacity>
+                            {this._getFuncPoint("Tích điểm", R.images.ic_cal_point)}
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            {this._getFuncPoint("Sử dụng điểm", R.images.ic_use_point)}
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            {this._getFuncPoint("Tiện ích", R.images.ic_utilities)}
+                        </TouchableOpacity>
                     </View>
-                </ScrollView>
-            </SafeAreaView>
+                    {/* block 2 function point */}
+                    <View style={styles.block_func_point_row}>
+                        <TouchableOpacity>
+                            {this._getFuncPoint("Hỏi - đáp", R.images.ic_q_and_a)}
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            {this._getFuncPoint("Đặt hàng", R.images.ic_order)}
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            {this._getFuncPoint("Bảo hành", R.images.ic_warranty)}
+                        </TouchableOpacity>
+
+                    </View>
+                </View>
+            </View>
         )
     }
 
@@ -122,14 +124,128 @@ export default class HomeScreen extends Component {
             </View>
         )
     }
-    _getProduct(img, name, price) {
-        return (
-            <View>
 
+    _productBlock() {
+        return (<View style={{
+            marginTop: 20,
+            marginLeft: 18,
+            width: "100%",
+            height: 270,
+            backgroundColor: 'white',
+        }}>
+            <View
+                style={{
+                    paddingRight: 38,
+                    width: '100%',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between'
+                }}>
+                <Text style={{
+                    fontSize: 16,
+                    fontFamily: "Roboto"
+                }}>Sản phẩm</Text>
+                <Text style={{
+                    paddingTop: 2,
+                    fontSize: 12,
+                    color: 'red',
+                    fontFamily: "Roboto"
+                }}>Tất cả</Text>
+            </View>
+            <View
+                style={{
+                    flex: 1,
+                    paddingRight: 20,
+                }}>
+                <ScrollView
+                    horizontal={true}>
+                    {this.state.data.listProduct.map(product => {
+                        return this._productItem(product)
+                    })}
+                </ScrollView>
+            </View>
+        </View>)
+    }
+    
+    _productItem(product) {
+        return (<View style={styles.block_item}>
+            <Image
+                style={styles.img_item_product}
+                source={{
+                    uri: product.image
+                }}
+            />
+            <Text style={{
+                paddingVertical: 6,
+                paddingHorizontal: 7,
+            }}>{product.name}</Text>
+            <View style={styles.img_item_price}>
+                <Image
+                    style={styles.img_price}
+                    source={R.images.ic_price}
+                />
+                <Text style={{
+                    color: 'red',
+                }}>{product.price} đ</Text>
+            </View>
+        </View>)
+    }
+
+
+    _newsBlock() {
+        return (<View>
+            <View style={{
+                marginTop: 5,
+                marginLeft: 18
+            }}>
+                <Text style={{
+                    fontSize: 16,
+                    fontFamily: "Roboto",
+                }}>Tin Tức</Text>
+            </View>
+
+            {this.state.data.listNews.map(news => {
+                return this._listNews(news)
+            })}
+            <View style={{
+                height: 165
+            }}>
+            </View>
+        </View>)
+    }
+    _listNews(news) {
+        return (
+            <View style={styles.block_news}>
+                <View style={{
+                    flexDirection: 'row'
+                }} >
+                    <Image style={styles.img_news}
+                        source={{
+                            uri: news.urlImage
+                        }} />
+                    <View style={{
+                        flexDirection: 'column',
+                        paddingHorizontal: 13,
+                    }}>
+                        <View style={{
+                            width: 239,
+                            height: 41
+                        }}>
+                            <Text>
+                                {news.title}
+                            </Text>
+                        </View>
+                        <Text>
+                            {news.date}
+                        </Text>
+                    </View>
+
+                </View>
             </View>
         )
     }
+
 }
+
 
 
 const styles = StyleSheet.create({
@@ -238,5 +354,44 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto',
         fontSize: 12,
         color: '#F70029'
-    }
+    },
+    // block item
+    block_item: {
+        width: 150,
+        height: 210,
+        marginTop: 8,
+        marginRight: 10,
+        borderRadius: 10,
+        borderColor: 'gray',
+        borderWidth: 1,
+    },
+    img_item_product: {
+        width: 150,
+        height: 120,
+        resizeMode: 'contain'
+    },
+    img_item_price: {
+        color: 'red',
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    img_price: {
+        width: 14,
+        height: 14,
+        margin: 12
+    },
+    // block newspaper
+    block_news: {
+        width: 343,
+        height: 91,
+        marginTop: 13,
+        marginLeft: 18,
+        marginRight: 14
+    },
+    img_news:{
+        width: 91,
+        height: 91,
+        borderRadius: 10,
+        resizeMode: 'cover'
+    },
 })

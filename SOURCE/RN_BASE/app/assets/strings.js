@@ -2,6 +2,8 @@ import i18 from '@i18';
         const strings = {
             
         home: i18.t("home"),
+        product: i18.t("product"),
+        point: i18.t("point"),
         notification: i18.t("notification"),
         user: i18.t("user"),
         account: i18.t("account"),

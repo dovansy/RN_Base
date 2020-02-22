@@ -4,17 +4,23 @@ const images = {
     ic_baohanh: require("./images/ic_baohanh.png"),
     ic_cal_point: require("./images/ic_cal_point.png"),
     ic_canhan: require("./images/ic_canhan.png"),
+    ic_cart: require("./images/ic_cart.png"),
     ic_coin: require("./images/ic_coin.png"),
     ic_cuahang: require("./images/ic_cuahang.png"),
     ic_daily: require("./images/ic_daily.png"),
     ic_dangxuat: require("./images/ic_dangxuat.png"),
     ic_datepicker: require("./images/ic_datepicker.png"),
+    ic_donhang: require("./images/ic_donhang.png"),
     ic_dungdiem: require("./images/ic_dungdiem.png"),
+    ic_fb_login: require("./images/ic_fb_login.png"),
+    ic_gg_login: require("./images/ic_gg_login.png"),
     ic_group: require("./images/ic_group.png"),
     ic_hoadon: require("./images/ic_hoadon.png"),
     ic_home: require("./images/ic_home.png"),
     ic_infoApp: require("./images/ic_infoApp.png"),
     ic_lichsu: require("./images/ic_lichsu.png"),
+    ic_line_or: require("./images/ic_line_or.png"),
+    ic_logo: require("./images/ic_logo.png"),
     ic_order: require("./images/ic_order.png"),
     ic_path: require("./images/ic_path.png"),
     ic_price: require("./images/ic_price.png"),
@@ -26,6 +32,7 @@ const images = {
     ic_user: require("./images/ic_user.png"),
     ic_use_point: require("./images/ic_use_point.png"),
     ic_utilities: require("./images/ic_utilities.png"),
-    ic_warranty: require("./images/ic_warranty.png")
+    ic_warranty: require("./images/ic_warranty.png"),
+    note: require("./images/note.png")
     }
 export default images

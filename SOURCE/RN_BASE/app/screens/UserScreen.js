@@ -11,39 +11,39 @@ import {
 import R from '@R'
 import DaiiChiHeader from '@component/DaiiChiHeader'
 import NavigationUtil from '~/navigation/NavigationUtil';
-import axios from 'axios'
+import { requestUserInfo} from '../constants/Api'
+import reactotron from 'reactotron-react-native'
 
 export default class UserScreen extends Component {
 
-    state = {
-        isLoading: true,
-        err: null,
-        data: {},
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoading: true,
+            err: null,
+            data: {},
+        }
     }
 
     componentDidMount() {
+        // lay du lieu
         this._getData()
     }
 
-    _getData() {
-        console.log("Bắt đầu lấy dữ liệu từ api")
-        axios.get("http://winds.hopto.org:8521/api/Service/GetUserInfor", {
-            headers: {
-                token: '65FD62931DE65C0F2F0EC18B28F78456'
-            }
-        }).then(res => {
-            console.log(res.data)
+    _getData = async () => {
+        try {
+            response = await requestUserInfo("deviceid")
+            reactotron.log(response)
             this.setState({
                 isLoading: false,
-                data: res.data.data
+                data: response.data
             })
-        }).catch(err => {
-            console.log(err)
+        } catch (error) {
             this.setState({
                 isLoading: false,
-                err: err
+                err: error
             })
-        })
+        }
     }
 
     render() {

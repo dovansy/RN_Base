@@ -3,6 +3,8 @@
 export default {
 	// Bar title
 	home: "Trang chủ",
+	product: "Sản phẩm",
+	point: "Dùng điểm",
 	notification: "Thông báo",
 	user: "Người dùng",
 	account: "Tài khoản",

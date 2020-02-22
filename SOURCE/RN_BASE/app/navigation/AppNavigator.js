@@ -6,8 +6,9 @@ import AuthLoadingScreen from '../screens/auth/AuthLoadingScreen';
 import LoginScreen from '../screens/auth/LoginScreen';
 import RegisterScreen from '../screens/auth/RegisterScreen';
 import ForgotPasswordScreen from '../screens/auth/ForgotPasswordScreen';
-import HomeScreen from '../screens/HomeScreen';
-import UserScreen from '../screens/UserScreen';
+import HomeScreen from '@screen/HomeScreen';
+import UserScreen from '@screen/UserScreen';
+import ProductScreen from '@screen/product/ProductScreen';
 import { SCREEN_ROUTER } from '@constant'
 import R from '@R';
 import * as theme from "@theme";
@@ -16,6 +17,8 @@ import {
     Image
 } from "react-native";
 import UpdateUserInfo from '~/screens/user/UpdateUserInfo';
+import PointScreen from '~/screens/PointScreen';
+import NotificationScreen from '~/screens/NotificationScreen';
 const TabBarComponent = props => <BottomTabBar {...props} />;
 
 const Auth = createStackNavigator({
@@ -27,6 +30,9 @@ const Auth = createStackNavigator({
 
 const tabbarIcons = {
     [SCREEN_ROUTER.HOME]: R.images.ic_home,
+    [SCREEN_ROUTER.PRODUCT]: R.images.ic_sanpham,
+    [SCREEN_ROUTER.POINT]: R.images.ic_dungdiem,
+    [SCREEN_ROUTER.NOTIFICATION]: R.images.ic_thongbao,
     [SCREEN_ROUTER.USER]: R.images.ic_user,
 };
 
@@ -43,7 +49,10 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
     );
 };
 
-const Main = createBottomTabNavigator(
+
+
+
+const bottomBar = createBottomTabNavigator(
     {
         [SCREEN_ROUTER.HOME]: {
             screen: HomeScreen,
@@ -52,24 +61,35 @@ const Main = createBottomTabNavigator(
                 tabBarLabel: R.strings.home,
             },
         },
-        [SCREEN_ROUTER.USER]: createStackNavigator({
-            user: {
-                screen: UserScreen,
-                title: R.strings.user,
-                navigationOptions: {
-                    tabBarLabel: R.strings.user,
-                },
+        [SCREEN_ROUTER.PRODUCT]: {
+            screen: ProductScreen,
+            title: R.strings.product,
+            navigationOptions: {
+                tabBarLabel: R.strings.product,
             },
-            updateUserInfo: {
-                screen: UpdateUserInfo,
-            }
         },
-            {
-                defaultNavigationOptions: {
-                    header: null,
-                },
+        [SCREEN_ROUTER.POINT] : {
+            screen: PointScreen,
+            title: R.strings.point,
+            navigationOptions: {
+                tabBarLabel: R.strings.point,
+            },
+        },
+        [SCREEN_ROUTER.NOTIFICATION] :{
+            screen: NotificationScreen,
+            title: R.strings.notification,
+            navigationOptions: {
+                tabBarLabel: R.strings.notification,
+            },
+        },
+        [SCREEN_ROUTER.USER]: {
+            screen: UserScreen,
+            title: R.strings.user,
+            navigationOptions: {
+            tabBarLabel: R.strings.user,
+
             }
-        ),
+        }
     },
     {
         defaultNavigationOptions: ({ navigation }) => ({
@@ -94,10 +114,23 @@ const Main = createBottomTabNavigator(
                 />
             );
         },
-        initialRouteName: 'User'
+
+        initialRouteName: 'Home'
     }
 
 )
+
+const Main = createStackNavigator({
+    bottomBar: bottomBar,
+    [SCREEN_ROUTER.UPDATE_USER_INFO] : UpdateUserInfo
+
+}, {
+    defaultNavigationOptions: {
+        header: null,
+    },
+})
+
+
 
 
 export default createAppContainer(
@@ -107,7 +140,7 @@ export default createAppContainer(
         [SCREEN_ROUTER.MAIN]: Main
     },
         {
-            initialRouteName: SCREEN_ROUTER.MAIN
+            initialRouteName: SCREEN_ROUTER.AUTH_LOADING
         }
     )
 )

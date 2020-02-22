@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, TextInput } from 'react-native';
 import { LoginButton, AccessToken, LoginManager } from 'react-native-fbsdk';
 import NavigationUtil from '../../navigation/NavigationUtil';
 import { GoogleSignin , statusCodes} from '@react-native-community/google-signin';
+import reactotron from 'reactotron-react-native'
 GoogleSignin.configure();
-//  GoogleSignin.configure({
-//             scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
-//             webClientId: '<FROM DEVELOPER CONSOLE>', // client ID of type WEB for your server (needed to verify user ID and offline access)
-//             offlineAccess: true, // if you want to access Google API on behalf of the user FROM YOUR SERVER
-//             hostedDomain: '', // specifies a hosted domain restriction
-//             loginHint: '', // [iOS] The user's ID, or email address, to be prefilled in the authentication UI if possible. [See docs here](https://developers.google.com/identity/sign-in/ios/api/interface_g_i_d_sign_in.html#a0a68c7504c31ab0b728432565f6e33fd)
-//             forceConsentPrompt: true, // [Android] if you want to show the authorization prompt at each login.
-//             accountName: '', // [Android] specifies an account name on the device that should be used
-//             // iosClientId: '<FROM DEVELOPER CONSOLE>', // [iOS] optional, if you want to specify the client ID of type iOS (otherwise, it is taken from GoogleService-Info.plist)
-//         });
+import {requestLogin} from '~/constants/Api'
+import AsyncStorage from '@react-native-community/async-storage'
+
+
 export default class LoginScreen extends Component {
+
+    state = {
+        isLoading: false,
+        err: null,
+        data: {},
+        inputName: '0123456789',
+        inputPass: '0123456789'
+    }
 
     // Somewhere in your code
     _ggLogin = async () => {
@@ -65,6 +68,7 @@ export default class LoginScreen extends Component {
                 justifyContent: 'center',
                 alignItems: 'center',
             }}>
+                {this._loginBlock()}
                 <TouchableOpacity
                     onPress={() => {
                         this._fbLogin()
@@ -84,4 +88,78 @@ export default class LoginScreen extends Component {
             </View>
         );
     }
+
+
+    _loginBlock() {
+        return (<View style={style.login}>
+            <TextInput
+                placeholder='Tài khoản'
+                style={style.username}
+                value={this.state.inputName}
+                onChangeText={name => {
+                    this.setState({
+                        ...this.state,
+                        inputName: name
+                    })
+                }}
+            >
+            </TextInput>
+
+            <TextInput
+                placeholder='Mật khẩu'
+                style={style.username}
+                value={this.state.inputPass}
+                onChangeText={pass => {
+                    this.setState({
+                        ...this.state,
+                        inputPass: pass
+                    })
+                }}>
+
+            </TextInput>
+
+            <TouchableOpacity
+                onPress={() => {
+                    // alert(`Tài khoản : ${this.state.inputName}
+                    // Mật khẩu :  ${this.state.inputPass}`)
+                    this._loginWithUsername()
+                }}
+            >
+                <Text>Đăng nhập</Text>
+            </TouchableOpacity>
+        </View>)
+    }
+
+    _loginWithUsername = async () => {
+        try {
+            response = await requestLogin({
+                "value": this.state.inputName,
+                "password": this.state.inputPass,
+                "type": "4"
+            })
+            token = response.data.token;
+            await AsyncStorage.setItem("token", token)
+            NavigationUtil.navigate("Main")
+
+            reactotron.log(response)
+        } catch (error) {
+            reactotron.log(error)
+        }
+    }
+
+
+
 }
+
+const style = StyleSheet.create({
+    login: {
+        width: '100%',
+        alignItems: 'center'
+    },
+    username: {
+        width: '80%',
+        height: 50,
+        margin: 10,
+        backgroundColor: 'gray'
+    }
+})
