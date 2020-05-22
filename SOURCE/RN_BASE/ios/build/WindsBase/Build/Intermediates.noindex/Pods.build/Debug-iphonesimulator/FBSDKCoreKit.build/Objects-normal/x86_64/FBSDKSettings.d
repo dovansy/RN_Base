@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKSettings.m \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Target\ Support\ Files/FBSDKCoreKit/FBSDKCoreKit-prefix.pch \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/Internal/FBSDKSettings+Internal.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKSettings.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCache.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKAccessToken.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKCopying.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestConnection.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenCaching.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/Internal/TokenCaching/FBSDKAccessTokenExpirer.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/AppEvents/Internal/FBSDKAppEvents+Internal.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/AppEvents/FBSDKAppEvents.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/AppEvents/Internal/FBSDKAppEventsUtility.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKApplicationDelegate.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKButton.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKConstants.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequest.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphRequestDataAttachment.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKTestUsersManager.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKUtility.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/AppLink/FBSDKAppLink.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/AppLink/FBSDKAppLinkTarget.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/AppLink/FBSDKAppLinkNavigation.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/AppLink/FBSDKAppLinkResolving.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/AppLink/FBSDKAppLinkResolver.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/AppLink/FBSDKAppLinkReturnToRefererController.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/AppLink/FBSDKAppLinkReturnToRefererView.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/AppLink/FBSDKAppLinkUtility.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKGraphErrorRecoveryProcessor.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKMeasurementEvent.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKMutableCopying.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKProfile.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKProfilePictureView.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/FBSDKURL.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKCoreKit/FBSDKCoreKit/FBSDKCoreKit/AppLink/FBSDKWebViewAppLinkResolver.h

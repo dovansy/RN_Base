@@ -5627,6 +5627,11 @@ pn@^1.1.0:
   resolved "https://registry.yarnpkg.com/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
   integrity sha512-2qHaIQr2VLRFoxe2nASzsV6ef4yOOH+Fi9FBOVH6cqeSgUnoyySPZkxzLuzd+RYOQTRpROA0ztTMqxROKSb/nA==
 
+pop@^0.0.33:
+  version "0.0.33"
+  resolved "https://registry.yarnpkg.com/pop/-/pop-0.0.33.tgz#cdd4a44cc49041bd8dbf5d2aae48c29e7a7dfdef"
+  integrity sha512-BVZd8afR9KgOjE9zTq6YMW1lAy7B6Aex6nvVP+6RIpxNOAQpYBmoeZVxWRT7PYVQv0FzD3R9O1Pm/OiTammN+g==
+
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"

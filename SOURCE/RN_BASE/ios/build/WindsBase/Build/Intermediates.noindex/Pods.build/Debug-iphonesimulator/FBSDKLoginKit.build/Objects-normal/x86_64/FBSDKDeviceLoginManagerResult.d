@@ -1,0 +1,33 @@
+dependencies: \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginKit/FBSDKDeviceLoginManagerResult.m \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Target\ Support\ Files/FBSDKLoginKit/FBSDKLoginKit-prefix.pch \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginKit/Internal/FBSDKDeviceLoginManagerResult+Internal.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKCoreKit.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKAccessToken.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKCopying.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKGraphRequestConnection.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKAppEvents.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKApplicationDelegate.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKButton.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKConstants.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKGraphRequest.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKGraphRequestDataAttachment.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKSettings.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKTestUsersManager.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKUtility.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKAppLink.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKAppLinkTarget.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKAppLinkNavigation.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKAppLinkResolving.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKAppLinkResolver.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKAppLinkReturnToRefererController.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKAppLinkReturnToRefererView.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKAppLinkUtility.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKGraphErrorRecoveryProcessor.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKMeasurementEvent.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKMutableCopying.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKProfile.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKProfilePictureView.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKURL.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/FBSDKCoreKit/FBSDKWebViewAppLinkResolver.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/FBSDKLoginKit/FBSDKLoginKit/FBSDKLoginKit/FBSDKDeviceLoginManagerResult.h

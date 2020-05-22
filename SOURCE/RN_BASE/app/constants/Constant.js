@@ -11,7 +11,8 @@ const SCREEN_ROUTER = {
   AUTH_LOADING: "AuthLoading",
   FORGOT_PASS: "ForgotPassword",
   REGISTER: "Register",
-  USER : 'User'
+  USER : 'User',
+  LIST_PRODUCTS : 'ListProduct'
 };
 
 export { SCREEN_ROUTER };

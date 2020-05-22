@@ -50,17 +50,17 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
     );
 };
 
-const ProductStack = createStackNavigator(
-    {
-        product: ProductScreen,
-        listProduct: ListProduct
-    },
-    {
-        defaultNavigationOptions: {
-            header: null,
-        }
-    }
-)
+// const ProductStack = createStackNavigator(
+//     {
+//         product: ProductScreen,
+//         listProduct: ListProduct
+//     },
+//     {
+//         defaultNavigationOptions: {
+//             header: null,
+//         }
+//     }
+// )
 
 
 const bottomBar = createBottomTabNavigator(
@@ -73,7 +73,7 @@ const bottomBar = createBottomTabNavigator(
             },
         },
         [SCREEN_ROUTER.PRODUCT]: {
-            screen: ProductStack,
+            screen: ProductScreen,
             title: R.strings.product,
             navigationOptions: {
                 tabBarLabel: R.strings.product,
@@ -132,7 +132,8 @@ const bottomBar = createBottomTabNavigator(
 )
 
 const Main = createStackNavigator({
-    bottomBar: bottomBar,
+    main: bottomBar,
+    [SCREEN_ROUTER.LIST_PRODUCT] : ListProduct,
     [SCREEN_ROUTER.UPDATE_USER_INFO]: UpdateUserInfo,
     [SCREEN_ROUTER.LIST_PRODUCT]: ListProduct
 

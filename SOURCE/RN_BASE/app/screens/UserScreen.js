@@ -11,40 +11,17 @@ import {
 import R from '@R'
 import DaiiChiHeader from '@component/DaiiChiHeader'
 import NavigationUtil from '~/navigation/NavigationUtil';
-import { requestUserInfo} from '../constants/Api'
+import { requestUserInfo } from '../constants/Api'
 import reactotron from 'reactotron-react-native'
 import { SCREEN_ROUTER } from '~/constants/Constant';
+// import { requestUserInfo } from '@action'
 
-export default class UserScreen extends Component {
+import { connect } from 'react-redux'
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            isLoading: true,
-            err: null,
-            data: {},
-        }
-    }
+class UserScreen extends Component {
 
     componentDidMount() {
-        // lay du lieu
-        this._getData()
-    }
-
-    _getData = async () => {
-        try {
-            response = await requestUserInfo("deviceid")
-            reactotron.log(response)
-            this.setState({
-                isLoading: false,
-                data: response.data
-            })
-        } catch (error) {
-            this.setState({
-                isLoading: false,
-                err: error
-            })
-        }
+        this.props.requestUserInfo
     }
 
     render() {
@@ -58,10 +35,11 @@ export default class UserScreen extends Component {
         )
     }
     _renderBody() {
-        if (this.state.isLoading)
+        const { userState } = this.props
+        if (userState.isLoading)
             return (<ActivityIndicator />
             )
-        if (this.state.err)
+        if (userState.error)
             return (<Text>Đã có lỗi xảy ra</Text>)
         return (
             <SafeAreaView style={styles.container}>
@@ -72,7 +50,7 @@ export default class UserScreen extends Component {
                     />
                     <View style={styles.block_thongtin}>
                         <View style={styles.text_block_name}>
-                            <Text style={styles.text_hoten}>{this.state.data.customerName}</Text>
+                            <Text style={styles.text_hoten}>{userState.data.customerName}</Text>
                             <Text style={styles.text_daily}> Đại lý</Text>
                         </View>
                         <TouchableOpacity
@@ -123,6 +101,15 @@ export default class UserScreen extends Component {
     }
 
 }
+const mapStateToProps = (state) => ({
+    userState: state.userReducer
+})
+
+const mapDispatchToProps = {
+    requestUserInfo
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserScreen)
 
 const styles = StyleSheet.create({
     container: {

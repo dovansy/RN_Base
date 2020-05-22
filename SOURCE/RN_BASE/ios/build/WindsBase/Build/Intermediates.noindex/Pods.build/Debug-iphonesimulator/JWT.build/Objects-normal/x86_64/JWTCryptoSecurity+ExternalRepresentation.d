@@ -1,0 +1,33 @@
+dependencies: \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/RSFamily/RSKeys/JWTCryptoSecurity+ExternalRepresentation.m \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Target\ Support\ Files/JWT/JWT-prefix.pch \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/RSFamily/RSKeys/JWTCryptoSecurity+ExternalRepresentation.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/FrameworkSupplement/JWT.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Coding/JWTCoding.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Coding/JWTCoding+ResultTypes.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Supplement/JWTDeprecations.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Coding/JWTCoding+VersionOne.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Coding/JWTCoding+VersionTwo.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Coding/JWTCoding+VersionThree.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/Base/JWTAlgorithm.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/RSFamily/JWTRSAlgorithm.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/Base/JWTAlgorithmFactory.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/Base/JWTAlgorithmNone.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/HSFamily/JWTAlgorithmHSBase.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/RSFamily/JWTAlgorithmRSBase.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/Base/JWTAlgorithmErrorDescription.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/ESFamily/JWTAlgorithmESBase.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/ESFamily/JWTAlgorithmAsymmetricBase.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/Holders/JWTAlgorithmDataHolder.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Supplement/JWTBase64Coder.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/Holders/JWTAlgorithmDataHolderChain.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/ClaimSet/JWTClaimsSet.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/ClaimSet/JWTClaim.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/ClaimSet/JWTClaimsSetSerializer.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/ClaimSet/JWTClaimsSetVerifier.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Supplement/JWTErrorDescription.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/RSFamily/RSKeys/JWTCryptoKey.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/RSFamily/RSKeys/JWTCryptoKeyExtractor.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/RSFamily/RSKeys/JWTCryptoSecurity.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/RSFamily/RSKeys/JWTCryptoSecurity+ErrorHandling.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/Algorithms/RSFamily/RSKeys/JWTCryptoSecurity+Extraction.h

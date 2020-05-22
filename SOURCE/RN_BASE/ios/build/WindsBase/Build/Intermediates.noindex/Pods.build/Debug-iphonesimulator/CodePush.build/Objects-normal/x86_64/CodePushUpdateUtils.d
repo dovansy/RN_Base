@@ -1,0 +1,45 @@
+dependencies: \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/node_modules/react-native-code-push/ios/CodePush/CodePushUpdateUtils.m \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Target\ Support\ Files/CodePush/CodePush-prefix.pch \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/node_modules/react-native-code-push/ios/CodePush/CodePush.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Public/React-Core/React/RCTEventEmitter.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Public/React-Core/React/RCTBridge.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Public/React-Core/React/RCTBridgeDelegate.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Public/React-Core/React/RCTJavaScriptLoader.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Public/React-Core/React/RCTDefines.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Public/React-Core/React/RCTInspectorDevServerHelper.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Public/React-Core/React/RCTPackagerConnection.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Public/React-Core/React/RCTBridgeModule.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Public/React-Core/React/RCTFrameUpdate.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Public/React-Core/React/RCTInvalidating.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/JWT/Core/FrameworkSupplement/JWT.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTCoding.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTCoding+ResultTypes.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTDeprecations.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTCoding+VersionOne.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTCoding+VersionTwo.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTCoding+VersionThree.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTAlgorithm.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTRSAlgorithm.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTAlgorithmFactory.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTAlgorithmNone.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTAlgorithmHSBase.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTAlgorithmRSBase.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTAlgorithmErrorDescription.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTAlgorithmESBase.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTAlgorithmAsymmetricBase.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTAlgorithmDataHolder.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTBase64Coder.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTAlgorithmDataHolderChain.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTClaimsSet.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTClaim.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTClaimsSetSerializer.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTClaimsSetVerifier.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTErrorDescription.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTCryptoKey.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTCryptoKeyExtractor.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTCryptoSecurity.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTCryptoSecurity+ErrorHandling.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWT.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTCryptoSecurity+ExternalRepresentation.h \
+  /Users/sy/Documents/RN_Base/SOURCE/RN_BASE/ios/Pods/Headers/Private/JWT/JWTCryptoSecurity+Extraction.h

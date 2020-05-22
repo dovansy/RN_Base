@@ -1,19 +1,22 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import {
-    Text, View, Image,
+    Text,
+    View,
+    Image,
     StyleSheet,
     ActivityIndicator,
     ScrollView,
     ImageBackground,
-    TouchableOpacity
-} from 'react-native'
-import R from '@R'
+    TouchableOpacity,
+    FlatList,
+} from "react-native";
+import R from "@R";
 //import HeaderProduct from '~/components/HeaderProduct'
-import reactotron from 'reactotron-react-native'
-import { requestProduct } from '~/constants/Api'
-import DaiiChiHeader from '~/components/DaiiChiHeader'
-import NavigationUtil from '~/navigation/NavigationUtil'
-import { SCREEN_ROUTER } from '~/constants/Constant'
+import reactotron from "reactotron-react-native";
+import { requestProduct } from "~/constants/Api";
+import DaiiChiHeader from "~/components/DaiiChiHeader";
+import NavigationUtil from "~/navigation/NavigationUtil";
+import { SCREEN_ROUTER } from "~/constants/Constant";
 
 export default class ProductScreen extends Component {
     constructor(props) {
@@ -22,120 +25,126 @@ export default class ProductScreen extends Component {
             isLoading: true,
             err: null,
             data: {},
-        }
+        };
     }
 
     componentDidMount() {
         // lay du lieu
-        this._getData()
+        this._getData();
     }
 
     _getData = async () => {
         try {
-            response = await requestProduct("deviceid")
-            reactotron.log(response)
+            response = await requestProduct("deviceid");
+            reactotron.log(response);
             this.setState({
                 isLoading: false,
-                data: response.data
-            })
+                data: response.data,
+            });
         } catch (error) {
             this.setState({
                 isLoading: false,
-                err: error
-            })
+                err: error,
+            });
         }
-    }
+    };
 
     render() {
         return (
             <View>
-                <DaiiChiHeader
-                    title="Sản phẩm"
-                />
+                <DaiiChiHeader title="Sản phẩm" />
                 {this._renderBody()}
             </View>
-        )
+        );
     }
 
     _renderBody() {
-        if (this.state.isLoading)
-            return (<ActivityIndicator />)
+        if (this.state.isLoading) return <ActivityIndicator />;
         if (this.state.err)
-            return (<Text>Đã có lỗi xảy ra, vui lòng thử lại</Text>)
-        return (<View>
-            <ScrollView>
-                {this._listCategoryBlock()}
-            </ScrollView>
-
-        </View>)
-    }
-
-    _listCategoryBlock() {
+            return <Text>Đã có lỗi xảy ra, vui lòng thử lại</Text>;
         return (
             <View>
-                {this.state.data.map(item => {
-                    return this._categoryItem(item)
-                })}
+                <FlatList
+                    data={this.state.data}
+                    renderItem={({ item, index }) =>
+                        this._categoryItem(item, index)
+                    }
+                />
             </View>
-        )
+        );
     }
-    _categoryItem(item) {
+
+    _categoryItem(item, index) {
         return (
             <View style={styles.block_category_main}>
-                <ImageBackground source={{
-                    uri: item.image
-                }} style={styles.image_category} />
-                <View style={{ flexDirection: 'row' }} >
-                    <View style={{ flexDirection: 'column' }}>
+                <ImageBackground
+                    source={{
+                        uri: item.image,
+                    }}
+                    style={styles.image_category}
+                />
+                <View style={{ flexDirection: "row" }}>
+                    <View style={{ flexDirection: "column" }}>
                         <TouchableOpacity
                             onPress={() => {
-                                NavigationUtil.navigate(SCREEN_ROUTER.LIST_PRODUCT)
-                            }}>
+                                NavigationUtil.navigate(
+                                    SCREEN_ROUTER.LIST_PRODUCTS,
+                                    {
+                                        param: item,
+                                    }
+                                );
+                            }}
+                        >
                             <View style={styles.block_name_category}>
-                                <Text style={styles.txt_name_category}>{item.name}</Text>
+                                <Text style={styles.txt_name_category}>
+                                    {item.name}
+                                </Text>
                             </View>
                         </TouchableOpacity>
                         <View>
-                            <Text style={styles.txt_descreption_category}>{item.description}</Text>
+                            <Text style={styles.txt_descreption_category}>
+                                {item.description}
+                            </Text>
                         </View>
                     </View>
                 </View>
-            </View>)
+            </View>
+        );
     }
 }
 
 const styles = StyleSheet.create({
     block_name_category: {
-        borderColor: 'white',
+        borderColor: "white",
         borderWidth: 1.5,
         marginTop: 71,
         marginLeft: 24,
         width: 180,
         height: 39,
-        paddingVertical: 5
+        paddingVertical: 5,
     },
     txt_descreption_category: {
         marginLeft: 24,
         marginTop: 12,
         fontSize: 12,
-        fontFamily: 'Roboto',
-        color: 'white'
+        fontFamily: "Roboto",
+        color: "white",
     },
     txt_name_category: {
-        fontFamily: 'Roboto',
+        fontFamily: "Roboto",
         fontSize: 16,
-        color: 'white',
-        textAlign: 'center'
+        color: "white",
+        textAlign: "center",
     },
     image_category: {
-        width: '100%',
-        height: '100%',
-        position: 'absolute'
+        width: "100%",
+        height: "100%",
+        position: "absolute",
     },
     block_category_main: {
         marginTop: 4,
         marginBottom: 2,
-        width: '100%',
+        width: "100%",
         height: 195,
     },
-})
+});

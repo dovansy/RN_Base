@@ -61,10 +61,18 @@ export const requestHomeData = (deviceID = "") => {
     getAxios.get(`api/Service/GetHomeScreen?deviceID=${deviceID}`)
   );
 };
-
+//product list
 export const requestProduct = () => {
   return handleResult(
     getAxios.get(`api/Service/getListCategory`)
+  );
+};
+
+export const requestListProduct = payload => {
+  return handleResult(
+    getAxios.get(
+      `api/Service/getListProduct?childID=${payload.childID}&page=${payload.page}&limit=10&parentID=${payload.parentID}&text=`
+    )
   );
 };
 
