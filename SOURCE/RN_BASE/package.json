@@ -14,7 +14,7 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.2",
     "@react-native-community/google-signin": "^3.0.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "pop": "^0.0.33",
     "react": "16.9.0",
     "react-i18next": "^9.0.10",
