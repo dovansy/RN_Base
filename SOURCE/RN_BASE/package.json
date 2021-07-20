@@ -18,7 +18,7 @@
     "pop": "^0.0.33",
     "react": "16.9.0",
     "react-i18next": "^9.0.10",
-    "react-native": "0.61.2",
+    "react-native": "0.62.3",
     "react-native-code-push": "^5.7.0",
     "react-native-datepicker": "^1.7.2",
     "react-native-elements": "^1.2.7",
